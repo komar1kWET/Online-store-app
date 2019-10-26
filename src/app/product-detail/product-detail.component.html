@@ -1,0 +1,6 @@
+<div class="wrapper" *ngIf="product">
+  <h2 class="product-name">{{product.name | uppercase}}</h2>
+  <img class="product-img" src="{{product.url}}" alt="{{product.description | slice:0:10}}">
+  <p class="product-discription">{{product.description}}</p>
+  <button class="back-button" (click)="goBack()">go back</button>
+</div>
