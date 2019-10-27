@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <h4 class="name">{{product.name}}</h4>
+  <img class="image" src="{{product.url}}" alt="{{product.description | slice:0:10}}">
+  <section>
+    <article>
+      <h5>Retail purchase</h5>
+      <p>{{product.name}} for {{product.singlePrice}}$</p>
+      <p>This is a price for purchase < 10 units in one buy.</p>
+    </article>
+    <article>
+      <h5>Wholesale purchase</h5>
+      <p>{{product.name}} for {{product.wholesalePrice}}$</p>
+      <p>This is a special price for purchase > 10 units in one buy.</p>
+      <p>Every fifteen purchase as a gift!</p>
+    </article>
+  </section>
+  <button (click)="goBack()">Go back</button>
+</div>

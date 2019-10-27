@@ -1,17 +1,19 @@
 <div class="fruits">
   <a class="fruit" *ngFor="let product of products"
-     routerLink="/detail/{{product.id}}"
-  >
+     routerLink="/product-detail/{{product.id}}">
       <h5 class="names">{{product.name}}</h5>
       <img class="image" src="{{product.url}}" alt="{{product.description | slice:0:10}}">
       <section class="card-footer">
-        <button class="button-wrapper">
-          <i class="material-icons">shopping_cart</i>
-          <p class="price">from {{product.wholesalePrice}}$</p>
+        <button class="button-wrapper"
+                (click)="goToPriceDetail(product.id)"
+        >
+        <i class="material-icons">shopping_cart</i>
+            <p class="price">from {{product.wholesalePrice}}$</p>
         </button>
         <i class="material-icons info"
            matTooltip="For details click on the image!">
-          info</i>
+          info
+        </i>
       </section>
   </a>
 </div>

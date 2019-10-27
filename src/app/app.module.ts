@@ -7,12 +7,14 @@ import { ProductComponent } from './product/product.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule, MatTooltipModule} from '@angular/material';
+import { PriceDetailComponent } from './price-detail/price-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    PriceDetailComponent
   ],
   imports: [
     BrowserModule,
