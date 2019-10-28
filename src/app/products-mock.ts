@@ -1,7 +1,7 @@
 export const PRODUCTS = [
   {
     id: 1,
-    url: 'https://cdn.pixabay.com/photo/2016/09/03/20/48/bananas-1642706_1280.jpg',
+    url: 'https://cdn.pixabay.com/photo/2017/06/27/22/21/banana-2449019_1280.jpg',
     name: 'Banana',
     description: 'Very tasty orange drink',
     singlePrice: 5,
@@ -9,7 +9,7 @@ export const PRODUCTS = [
   },
   {
     id: 2,
-    url: 'https://cdn.pixabay.com/photo/2018/04/29/11/54/strawberries-3359755_1280.jpg',
+    url: 'https://cdn.pixabay.com/photo/2014/02/23/11/11/strawberries-272812_1280.jpg',
     name: 'Strawberry',
     description: 'The famous tasty flavor!',
     singlePrice: 6,
@@ -17,7 +17,7 @@ export const PRODUCTS = [
   },
   {
     id: 3,
-    url: 'https://cdn.pixabay.com/photo/2013/11/20/23/02/king-mango-214269_1280.jpg',
+    url: 'https://cdn.pixabay.com/photo/2016/03/05/22/18/food-1239241_1280.jpg',
     name: 'Mango',
     description: 'Colourless drink for your party',
     singlePrice: 13,
@@ -25,7 +25,7 @@ export const PRODUCTS = [
   },
   {
     id: 4,
-    url: 'https://cdn.pixabay.com/photo/2017/09/26/13/42/apple-2788662_1280.jpg',
+    url: 'https://cdn.pixabay.com/photo/2016/11/18/13/47/apple-1834639_1280.jpg',
     name: 'Apple',
     description: 'Amazing drink',
     singlePrice: 7,
@@ -33,7 +33,7 @@ export const PRODUCTS = [
   },
   {
     id: 5,
-    url: 'https://cdn.pixabay.com/photo/2017/08/18/19/48/grapes-2656259_1280.jpg',
+    url: 'https://cdn.pixabay.com/photo/2016/03/05/22/59/berry-1239425_1280.jpg',
     name: 'Grape',
     description: 'If you want to feel summer',
     singlePrice: 4,
@@ -41,7 +41,7 @@ export const PRODUCTS = [
   },
   {
     id: 6,
-    url: 'https://cdn.pixabay.com/photo/2016/06/18/22/36/cherries-1465801_1280.jpg',
+    url: 'https://cdn.pixabay.com/photo/2018/01/10/16/59/cherry-3074284_1280.jpg',
     name: 'Cherry',
     description: 'So tasty',
     singlePrice: 9,

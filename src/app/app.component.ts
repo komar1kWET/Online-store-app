@@ -11,6 +11,8 @@ export class AppComponent implements AfterViewInit {
   constructor(private elementRef: ElementRef) {}
 
   ngAfterViewInit() {
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = 'antiquewhite';
+    // console.log(this.elementRef.nativeElement.ownerDocument.body.style);
+    // this.elementRef.nativeElement.ownerDocument.body.style.backgroundImage =
+    //   'url("https://cdn.pixabay.com/photo/2019/06/11/15/53/lemon-4267329_1280.png\")';
   }
 }

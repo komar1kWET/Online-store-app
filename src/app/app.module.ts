@@ -6,22 +6,26 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatTooltipModule} from '@angular/material';
+import {MatButtonModule, MatDialogModule, MatIconModule, MatTooltipModule} from '@angular/material';
 import { PriceDetailComponent } from './price-detail/price-detail.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     ProductDetailComponent,
-    PriceDetailComponent
+    PriceDetailComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
