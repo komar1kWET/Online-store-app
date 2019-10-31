@@ -1,4 +1,11 @@
 # OnlineStore
+In this project, you can store products.
+Admin 
+login: admin, 
+password: admin
+
+User login and password store in localStorage.
+When you loggIn as admin, you can add, remove, edit products.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
 
