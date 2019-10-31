@@ -1,25 +1,23 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Product} from '../Product';
-import {Location} from '@angular/common';
+import {Product} from '../../../domain/Product';
 import {ActivatedRoute} from '@angular/router';
-import {ProductService} from '../product.service';
+import {ProductService} from '../../../services/product/product.service';
+import {Location} from '@angular/common';
 
 @Component({
-  selector: 'app-price-detail',
-  templateUrl: './price-detail.component.html',
-  styleUrls: ['./price-detail.component.sass']
+  selector: 'app-edit-modal',
+  templateUrl: './edit-modal.component.html',
+  styleUrls: ['./edit-modal.component.sass']
 })
-export class PriceDetailComponent implements OnInit {
-
+export class EditModalComponent implements OnInit {
   @Input() product: Product;
-
   constructor(
+    private productService: ProductService,
     private location: Location,
-    private route: ActivatedRoute,
-    private productService: ProductService
+    private route: ActivatedRoute
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getProduct();
   }
 

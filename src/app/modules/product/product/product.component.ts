@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Product} from '../Product';
-import {ProductService} from '../product.service';
+import { Component, OnInit,  } from '@angular/core';
+import {ProductService} from '../../../services/product/product.service';
 import {Router} from '@angular/router';
+import {Product} from '../../../domain/Product';
 
 @Component({
   selector: 'app-product',
@@ -22,8 +22,10 @@ export class ProductComponent implements OnInit {
   }
 
   getProducts(): void {
-    this.productService.getAllProducts()
-      .subscribe(products => this.products = products);
+    this.productService.postProduct
+      .subscribe(products => {
+        this.products = products;
+      });
   }
 
   goToPriceDetail(id: number) {

@@ -1,4 +1,9 @@
 <h1>{{title}}</h1>
-<app-admin-panel></app-admin-panel>
+<a class="login" routerLink="/login" *ngIf="!adminMode">Log In</a>
+<a class="login" *ngIf="adminMode" (click)="disableAdminMode()" routerLink="/">Log Out</a>
+<nav *ngIf="adminMode">
+  <a class="admin" routerLink="/admin-table">Admin table</a>
+  <a routerLink="/consumer-view">Consumer view</a>
+</nav>
 <router-outlet></router-outlet>
 

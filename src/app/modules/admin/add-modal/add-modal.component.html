@@ -1,0 +1,42 @@
+<!--<button (click)="">-->
+<!--  close-->
+<!--</button>-->
+<mat-card-title>Add new product</mat-card-title>
+<mat-card-content>
+  <form [formGroup]="addForm">
+    <p>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Url" formControlName="url">
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Name" formControlName="name">
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Description" formControlName="description">
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field>
+        <input type="number" matInput placeholder="Retail price" formControlName="retailPrice">
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field>
+        <input type="number" matInput placeholder="Wholesale price" formControlName="wholesalePrice">
+      </mat-form-field>
+    </p>
+
+    <div class="button">
+      <button type="submit" mat-button (click)="createNewProduct()">Submit</button>
+    </div>
+
+  </form>
+</mat-card-content>

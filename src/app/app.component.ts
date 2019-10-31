@@ -1,18 +1,32 @@
-import {AfterViewInit, Component, ElementRef} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AuthenticationService} from './services/authentication/authentication.service';
+import {ADMIN} from './mock-data/admin-mock';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements OnInit {
   title = 'Online store';
+  adminMode = false;
+  constructor(
+    private authenticationService: AuthenticationService
+  ) { }
 
-  constructor(private elementRef: ElementRef) {}
+  ngOnInit() {
+    this.getAdminData();
+  }
+  getAdminData(): void {
+    this.authenticationService.getAdminReader()
+      .subscribe((data: any) => {
+        if (data.login === ADMIN.login && data.password === ADMIN.password) {
+          this.adminMode = true;
+        }});
+  }
 
-  ngAfterViewInit() {
-    // console.log(this.elementRef.nativeElement.ownerDocument.body.style);
-    // this.elementRef.nativeElement.ownerDocument.body.style.backgroundImage =
-    //   'url("https://cdn.pixabay.com/photo/2019/06/11/15/53/lemon-4267329_1280.png\")';
+  disableAdminMode(): void {
+    localStorage.setItem('user', JSON.stringify({login: '', password: ''}));
+    this.adminMode = false;
   }
 }

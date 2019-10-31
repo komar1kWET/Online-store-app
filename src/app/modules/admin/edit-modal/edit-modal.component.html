@@ -1,0 +1,35 @@
+<section class="wrapper" *ngIf="product">
+  <h2>{{product.name | uppercase}}</h2>
+  <div><span>Editable product has id: </span>{{product.id}}</div>
+  <div>
+    <label>
+      <p>Name: </p>
+      <input [(ngModel)]="product.name" placeholder="name"/>
+    </label>
+  </div>
+  <div>
+    <label>
+      <p>Url: </p>
+      <input [(ngModel)]="product.url" placeholder="url"/>
+    </label>
+  </div>
+  <div>
+    <label>
+      <p>Description: </p>
+      <input [(ngModel)]="product.description" placeholder="description"/>
+    </label>
+  </div>
+  <div>
+    <label>
+      <p>Retail price: </p>
+      <input [(ngModel)]="product.retailPrice" placeholder="retailPrice"/>
+    </label>
+  </div>
+  <div>
+    <label>
+      <p>Wholesale price: </p>
+      <input [(ngModel)]="product.wholesalePrice" placeholder="wholesalePrice"/>
+    </label>
+  </div>
+  <button (click)="goBack()">Return to table</button>
+</section>

@@ -1,8 +1,8 @@
-export class Product {
+export interface Product {
   id: number;
   url: string;
   name: string;
   description: string;
-  singlePrice: number;
+  retailPrice: number;
   wholesalePrice: number;
 }
