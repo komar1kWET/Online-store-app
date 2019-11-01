@@ -15,7 +15,7 @@ export class AuthenticationService {
     password: ''
   };
   postUser = new Subject();
-  posterReader = this.postUser.asObservable();
+  userReader = this.postUser.asObservable();
   constructor(
     private router: Router,
   ) { }
@@ -27,9 +27,7 @@ export class AuthenticationService {
   }
 
   getAdminReader() {
-   return this.posterReader.pipe(tap(val => {
-     return val;
-   }));
+   return this.userReader.pipe(tap(val => val));
   }
 
   checkUser() {

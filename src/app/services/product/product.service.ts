@@ -14,10 +14,6 @@ export class ProductService {
 
   constructor() { }
 
-  getAllProducts(): Observable<Product[]> {
-    return of(PRODUCTS);
-  }
-
   getProduct(id: number): Observable<Product> {
     return this.postProduct.pipe(map(product => product.find(item => item.id === id)));
   }
