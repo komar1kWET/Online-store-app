@@ -1,0 +1,11 @@
+<form [formGroup]="">
+  <mat-form-field>
+    <input matInput placeholder="Search product ?" aria-label="Product" [matAutocomplete]="auto" [formControl]="productCtrl">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let prod of filteredProducts | async" [value]="prod.name">
+        <img aria-hidden [src]="prod.url" height="25" width="35">
+        <span>{{prod.name}}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
