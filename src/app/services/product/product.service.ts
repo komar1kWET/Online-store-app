@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable, of, Subject} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {Product} from '../../domain/Product';
 import {PRODUCTS} from '../../mock-data/products-mock';
 import {map} from 'rxjs/operators';
@@ -21,4 +21,6 @@ export class ProductService {
   postProductItem(item) {
     this.postProduct.next(item.value);
   }
+
+
 }

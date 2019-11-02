@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {Product} from '../../../domain/Product';
@@ -12,17 +12,14 @@ import {map, startWith} from 'rxjs/operators';
 })
 export class SearchComponent implements OnInit {
 
+  @Output() filterProduct = new EventEmitter();
   productCtrl = new FormControl();
   filteredProducts: Observable<Product[]>;
   products: Product[];
   constructor(
     private productService: ProductService,
 ) {
-    this.filteredProducts = this.productCtrl.valueChanges
-      .pipe(
-        startWith(''),
-        map(product => product ? this._filterProducts(product) : this.products.slice())
-      );
+    this.filteredView();
   }
 
   ngOnInit() {
@@ -41,4 +38,16 @@ export class SearchComponent implements OnInit {
     return this.products.filter(product => product.name.toLowerCase().indexOf(filterProd) === 0);
   }
 
+  filteredView() {
+    this.filteredProducts = this.productCtrl.valueChanges
+      .pipe(
+        startWith(''),
+        map(product => product ? this._filterProducts(product) : this.products.slice())
+      );
+  }
+
+  filterProductView() {
+    console.log(this.productCtrl.value);
+    this.filterProduct.emit(this.productCtrl.value);
+  }
 }
