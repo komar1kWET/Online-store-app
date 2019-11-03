@@ -4,9 +4,17 @@ import {ProductComponent} from './product/product.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {PriceDetailComponent} from './price-detail/price-detail.component';
 import {AppRoutingModule} from '../../app-routing.module';
-import {MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule, MatTooltipModule} from '@angular/material';
+import {
+  _MatMenuDirectivesModule,
+  MatAutocompleteModule,
+  MatFormFieldModule, MatIconModule,
+  MatInputModule, MatMenuModule,
+  MatSlideToggleModule,
+  MatTooltipModule
+} from '@angular/material';
 import {SearchComponent} from './search/search.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { FilterComponent } from './filter/filter.component';
 
 
 
@@ -15,7 +23,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     ProductComponent,
     ProductDetailComponent,
     PriceDetailComponent,
-    SearchComponent
+    SearchComponent,
+    FilterComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +34,10 @@ import {ReactiveFormsModule} from '@angular/forms';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatSlideToggleModule,
-    MatInputModule
+    MatInputModule,
+    _MatMenuDirectivesModule,
+    MatIconModule,
+    MatMenuModule
   ]
 })
 export class ProductModule { }

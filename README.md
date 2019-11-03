@@ -1,11 +1,17 @@
 # OnlineStore
-In this project, you can store products.
-Admin 
-login: admin, 
-password: admin
+In this project, you can store products. <br>
+Admin account<br>
+<b>login</b>: admin, <br>
+<b>password</b>: admin
 
 User login and password store in localStorage.
 When you loggIn as admin, you can add, remove, edit products.
+<br>
+In admin mode you can also consumer view. <br>
+For consumer available search form, where you can search concrete product and choose him. <br>
+Also available filter drop-down menu, where you can filter products by price. <br>
+For me, it was a novelty to write guard, so that it was impossible to go through a direct link to the admin panel. <br>
+In the future I plan to receive data from the MongoDB database by writing endpoints using Node.js and Express.js
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
 

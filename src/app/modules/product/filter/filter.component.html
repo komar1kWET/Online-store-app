@@ -1,0 +1,17 @@
+<button mat-icon-button class="filter-btn" [matMenuTriggerFor]="menu" aria-label="filter">
+  <span>Filter</span>
+  <i class="material-icons">
+    sort
+  </i>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="filterLess()">
+    <span>Less 4$</span>
+  </button>
+  <button mat-menu-item (click)="filterMore()">
+    <span>More 4$</span>
+  </button>
+  <button mat-menu-item (click)="allProducts()">
+    <span>All products</span>
+  </button>
+</mat-menu>

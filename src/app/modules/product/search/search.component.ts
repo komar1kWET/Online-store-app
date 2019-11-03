@@ -12,14 +12,14 @@ import {map, startWith} from 'rxjs/operators';
 })
 export class SearchComponent implements OnInit {
 
-  @Output() filterProduct = new EventEmitter();
+  @Output() searchProduct = new EventEmitter();
   productCtrl = new FormControl();
-  filteredProducts: Observable<Product[]>;
+  searchedProducts: Observable<Product[]>;
   products: Product[];
   constructor(
     private productService: ProductService,
 ) {
-    this.filteredView();
+    this.searchedView();
   }
 
   ngOnInit() {
@@ -32,22 +32,21 @@ export class SearchComponent implements OnInit {
       });
   }
 
-  private _filterProducts(prod: string): Product[] {
-    const filterProd = prod.toLowerCase();
+  private _searchProducts(prod: string): Product[] {
+    const searchProd = prod.toLowerCase();
 
-    return this.products.filter(product => product.name.toLowerCase().indexOf(filterProd) === 0);
+    return this.products.filter(product => product.name.toLowerCase().indexOf(searchProd) === 0);
   }
 
-  filteredView() {
-    this.filteredProducts = this.productCtrl.valueChanges
+  searchedView() {
+    this.searchedProducts = this.productCtrl.valueChanges
       .pipe(
         startWith(''),
-        map(product => product ? this._filterProducts(product) : this.products.slice())
+        map(product => product ? this._searchProducts(product) : this.products.slice())
       );
   }
 
-  filterProductView() {
-    console.log(this.productCtrl.value);
-    this.filterProduct.emit(this.productCtrl.value);
+  searchProductView() {
+    this.searchProduct.emit(this.productCtrl.value);
   }
 }

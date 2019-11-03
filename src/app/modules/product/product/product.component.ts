@@ -33,12 +33,17 @@ export class ProductComponent implements OnInit {
     return false;
   }
 
-  filterProducts(searchProd) {
+  searchProducts(searchProd) {
+    this.getProducts();
     if (searchProd === '') {
       this.getProducts();
     } else {
       this.products = this.products.filter(prod => prod.name === searchProd);
     }
+  }
+
+  filterProducts(products) {
+    this.products = products;
   }
 
 }
